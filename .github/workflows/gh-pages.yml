@@ -33,17 +33,12 @@ jobs:
           cmake --build . --target doc
           cd ..
           mkdir public
-          mv build/docs/sphinx/html/ ./public/
-          apt-get update
-          apt-get install tree
-          cd public
-          tree
-
-#      - name: Deploy
-#        uses: peaceiris/actions-gh-pages@v3
-#        if: github.ref == 'refs/heads/main'
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#          publish_dir: ./public
-#          publish_branch: gh-pages
+          mv build/docs/sphinx/html/* public/
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
 #          cname: wow.your-domain.ai
