@@ -1,0 +1,104 @@
+* This is an org test document
+
+  There are some trouble with cross-reference between documents.
+  I am curious about [[file:orgtest2.html::*This here][these]]
+  I am curious about @@rst::ref:`those <rst/orgtest2:This here>`@@
+  I am curious about @@rst::doc:`nothing <orgtest2>`@@
+
+  Intersphinx @@rst::doc:`sphinx:usage/extensions/intersphinx`@@.  I like sinspekto
+  =rst::doc:`sinspekto:api/library-api`=. Currently unable to create cross references to
+  cpp for some reason, can instead use =rst::doc:`sinspekto:api/classAxisEqualizer`= to
+  point to page.
+
+  #+BEGIN_note
+  Some of the links above assume that there is a localhost server at 20000 hosting sinspekto doc
+  #+END_note
+
+
+** Admonition
+
+#+BEGIN_seealso
+[[https://docutils.sourceforge.io/0.7/docs/ref/rst/directives.html#admonitions][admonition]]
+#+END_seealso
+
+#+BEGIN_note
+This is new anote
+#+END_note
+
+#+BEGIN_warning
+This is a warning. If $a^2=b$ and \( b=2 \), then the solution must be
+either $$ a=+\sqrt{2} $$ or \[ a=-\sqrt{2}. \]
+#+END_warning
+
+#+BEGIN_danger
+This is a danger @@rst::class:`ocean::fish`@@ and @@rst:::func:`ocean::fish::fish_me`@@
+#+END_danger
+
+#+BEGIN_tip
+This is a tip.
+ - [[https://www.sphinx-doc.org/en/latest/usage/restructuredtext/domains.html#cpp-domain][sphinx cpp domain linking strategies]].
+ - [[https://exhale.readthedocs.io/en/latest/usage.html][more usage tips from Exhale]]
+#+END_tip
+
++ [2/2] In org-mode
+  + [X] Add plantuml
+    + As rst block
+    + As code block and export results
+  + [X] Add math equation
+
+#+BEGIN_uml
+     !include ../static/style.puml
+     fish <|-- shark
+#+END_uml
+
+#+BEGIN_SRC plantuml :exports results :file ../static/plant.svg
+  ' This is a comment
+  !include ../static/style.puml
+  Alice -> Bob: synchronous call
+  Alice ->> Bob: asynchronous call
+#+END_SRC
+
+#+RESULTS:
+[[file:../static/plant.svg]]
+
+This resource is also useful for plantuml stuff [[https://plantuml-documentation.readthedocs.io/en/latest/index.html][3rd party doc]].
+A good styling option [[https://github.com/RicardoNiepel/C4-PlantUML/blob/master/C4.puml][C4 method]]. See how to use in [[https://crashedmind.github.io/PlantUMLHitchhikersGuide/C4/C4Stdlib.html#c4plantuml-label][this guide]].
+
+#+BEGIN_SRC plantuml :exports results :file ../static/factory.svg
+  !include ../static/style.puml
+
+  LAYOUT_WITH_LEGEND()
+
+  title Container diagram for Test
+
+  Person(captain, Caption, "A caption of the boat")
+
+  System_Boundary(c1, "Internet Banking") {
+      Container(web_app, "Web Application", "Java, Spring MVC", "Delivers the static content and the Internet banking SPA")
+      Container(spa, "Single-Page App", "JavaScript, Angular", "Provides all the Internet banking functionality to cutomers via their web browser")
+      Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of the Internet banking functionality to customers via their mobile device")
+      ContainerDb(database, "Database", "SQL Database", "Stores user registraion information, hased auth credentials, access logs, etc.")
+      Container(backend_api, "API Application", "Java, Docker Container", "Provides Internet banking functionality via API")
+  }
+
+  System_Ext(email_system, "E-Mail System", "The internal Microsoft Exchange system")
+  System_Ext(banking_system, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+  Rel(customer, web_app, "Uses", "HTTPS")
+  Rel(customer, spa, "Uses", "HTTPS")
+  Rel(customer, mobile_app, "Uses")
+
+  Rel_Neighbor(web_app, spa, "Delivers")
+  Rel(spa, backend_api, "Uses", "async, JSON/HTTPS")
+  Rel(mobile_app, backend_api, "Uses", "async, JSON/HTTPS")
+  Rel_Back_Neighbor(database, backend_api, "Reads from and writes to", "sync, JDBC")
+
+  Rel_Back(customer, email_system, "Sends e-mails to")
+  Rel_Back(email_system, backend_api, "Sends e-mails using", "sync, SMTP")
+  Rel_Neighbor(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS")
+
+
+#+END_SRC
+
+#+RESULTS:
+[[file:../static/factory.svg]]

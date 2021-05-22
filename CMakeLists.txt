@@ -1,0 +1,134 @@
+cmake_minimum_required(VERSION 3.8)
+
+set(THE_PROJECT_AUTHOR "Joakim Haugen")
+set(THE_PROJECT_MAINTAINER "Unspecified <joakim.haugen@gmail.com>")
+set(THE_PROJECT_VENDOR "Unspecified")
+
+list(INSERT CMAKE_MODULE_PATH 0 "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
+# Use git tag and synchronize version.txt
+file(STRINGS "${CMAKE_SOURCE_DIR}/version.txt" projectVersion)
+
+
+
+project(sturdy
+  VERSION ${projectVersion}
+  LANGUAGES CXX
+  DESCRIPTION "Just a test package"
+  )
+
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_DEBUG_POSTFIX "_d" CACHE STRING "Generate debug library name with a postfix.")
+
+include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
+
+set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/${CMAKE_PROJECT_NAME})
+
+set(STURDY_ALL_TARGETS "" CACHE STRING "All Targets")
+add_subdirectory(src)
+
+add_subdirectory(docs) # To be optional?
+
+write_basic_package_version_file(
+  ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}ConfigVersion.cmake
+  VERSION ${PROJECT_VERSION}
+  COMPATIBILITY AnyNewerVersion)
+
+# TODO: Create a script that produces find_dependency listings to be included below, which
+# are in sync with find_package above
+configure_file(cmake/projectConfig.cmake.in
+  cmake/${PROJECT_NAME}Config.cmake.in @ONLY)
+
+configure_package_config_file(${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.cmake.in
+  ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.cmake
+  PATH_VARS INSTALL_CONFIGDIR
+  INSTALL_DESTINATION ${INSTALL_CONFIGDIR})
+
+install(FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Config.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}ConfigVersion.cmake
+  COMPONENT dev
+  DESTINATION ${INSTALL_CONFIGDIR})
+
+install(EXPORT ${PROJECT_NAME}
+  FILE ${PROJECT_NAME}Targets.cmake
+  NAMESPACE "${PROJECT_NAME}::"
+  COMPONENT dev
+  DESTINATION ${INSTALL_CONFIGDIR})
+
+install(FILES LICENSE
+  COMPONENT dev
+  DESTINATION ${CMAKE_INSTALL_DATADIR}/${CMAKE_PROJECT_NAME})
+
+
+export(EXPORT ${PROJECT_NAME}
+  FILE ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Targets.cmake
+  NAMESPACE "${PROJECT_NAME}::")
+# ------------------------------------------------------
+# Packaging
+# ------------------------------------------------------
+# Not tested on windows..
+
+string(TOLOWER ${CMAKE_CXX_COMPILER_ID} COMPILER)
+set(COMPILER_VERSION ${CMAKE_CXX_COMPILER_VERSION})
+string(REPLACE "." ";" comp_list "${COMPILER_VERSION}")
+
+list(GET comp_list 0 COMP_MAJOR)
+#list(GET comp_list 1 COMP_MINOR) # no need for gnu > 6, but what about other compilers?
+
+set(COMPILER ${COMPILER}-${COMP_MAJOR})
+
+if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+  set(ARCHITECTURE amd64)
+else()
+  set(ARCHITECTURE i386)
+endif()
+
+set(PACKAGE_LINUX_INSTALL_PREFIX /opt) # CMAKE_INSTALL_PREFIX?
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "${PROJECT_DESCRIPTION}")
+set(CPACK_PACKAGE_VENDOR "${THE_PROJECT_VENDOR}")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/readme.org")
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+
+set(CPACK_PACKAGE_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${PROJECT_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${PROJECT_VERSION_PATCH})
+set(CPACK_DEBIAN_PACKAGE_VERSION ${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH})
+
+set(CPACK_PACKAGE_FILE_NAME ${CMAKE_PROJECT_NAME}-${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}-${COMPILER}_${ARCHITECTURE})
+set(THE_PACKAGE_FILE_NAME ${CPACK_PACKAGE_FILE_NAME})
+
+set(CPACK_DEB_COMPONENT_INSTALL ON)
+set(CPACK_COMPONENTS_ALL runtime dev doc) # add man
+set(CPACK_COMPONENT_DEV_DEPENDS runtime doc) # add man
+
+if(WIN32 AND NOT UNIX)
+  set(CPACK_GENERATOR "NSIS")
+  set(CPACK_PACKAGE_INSTALL_DIRECTORY /${CMAKE_PROJECT_NAME}-${VERSION_MAJOR}.${VERSION_MINOR})
+  set(CPACK_SOURCE_PACKAGE_FILE_NAME ${CMAKE_PROJECT_NAME}-${VERSION_NUMBER})
+  set(CPACK_NSIS_DISPLAY_NAME  "${CPACK_PACKAGE_INSTALL_DIRECTORY} ${CMAKE_PROJECT_NAME}")
+
+else(WIN32 AND NOT UNIX)
+
+  set(CPACK_GENERATOR "DEB;TGZ")
+  if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
+    set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE amd64)
+  endif()
+  set(CPACK_DEBIAN_PACKAGE_MAINTAINER "${THE_PROJECT_MAINTAINER}")
+  set(CPACK_DEBIAN_PACKAGE_PRIORITY optional)
+  set(CPACK_PACKAGING_INSTALL_PREFIX "${PACKAGE_LINUX_INSTALL_PREFIX}")
+  set(CPACK_DEBIAN_ENABLE_COMPONENT_DEPENDS ON)
+
+endif(WIN32 AND NOT UNIX)
+
+include(CPack)
+
+add_custom_target(package_it
+  COMMAND cmake --build . --target package
+  COMMENT "Package project ${CMAKE_PROJECT_NAME}"
+  VERBATIM)
+
+add_dependencies(package_it doc)

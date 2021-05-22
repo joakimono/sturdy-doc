@@ -1,0 +1,7 @@
+* Test project
+
+  This is a test project to establish minimal setup for a modern cmake c++ project example
+
+** Notes
+
+   It is starting to take shape, this section is found in readme

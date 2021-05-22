@@ -1,0 +1,268 @@
+#+LaTeX_HEADER: \usepackage{algorithm}
+#+LaTeX_HEADER: \usepackage{siunitx}
+#+LaTeX_HEADER: \usepackage{algpseudocode}
+#+LaTeX_HEADER: \usepackage{amsthm}
+#+LaTeX_HEADER: \renewcommand{\eqref}[1]{Eq. (\ref{#1})}
+#+LaTeX_HEADER: \newtheorem{acknowledgment}{Acknowledgment}
+#+LaTeX_HEADER: \newtheorem{assertion}{Assertion}
+#+LaTeX_HEADER: \newtheorem{assumption}{Assumption}
+#+LaTeX_HEADER: \newtheorem{axiom}{Axiom}
+#+LaTeX_HEADER: \newtheorem{case}{Case}
+#+LaTeX_HEADER: \newtheorem{claim}{Claim}
+#+LaTeX_HEADER: \newtheorem{conclusion}{Conclusion}
+#+LaTeX_HEADER: \newtheorem{condition}{Condition}
+#+LaTeX_HEADER: \newtheorem{conjecture}{Conjecture}
+#+LaTeX_HEADER: \newtheorem{corollary}{Corollary}
+#+LaTeX_HEADER: \newtheorem{criterion}{Criterion}
+#+LaTeX_HEADER: \newtheorem{definition}{Definition}
+#+LaTeX_HEADER: \newtheorem{example}{Example}
+#+LaTeX_HEADER: \newtheorem{exercise}{Exercise}
+#+LaTeX_HEADER: \newtheorem{hypothesis}{Hypothesis}
+#+LaTeX_HEADER: \newtheorem{lemma}{Lemma}
+#+LaTeX_HEADER: \newtheorem{notation}{Notation}
+#+LaTeX_HEADER: \newtheorem{observation}{Observation}
+#+LaTeX_HEADER: \newtheorem{problem}{Problem}
+#+LaTeX_HEADER: \newtheorem{property}{Property}
+#+LaTeX_HEADER: \newtheorem{proposition}{Proposition}
+#+LaTeX_HEADER: \newtheorem{question}{Question}
+#+LaTeX_HEADER: \newtheorem{remark}{Remark}
+#+LaTeX_HEADER: \newtheorem{summary}{Summary}
+#+LaTeX_HEADER: \newtheorem{theorem}{Theorem}
+#+LaTeX_HEADER: \newtheorem{warning}{Warning}
+* Quick view of org-mode to html
+
+** Overview
+   :PROPERTIES:
+   :CUSTOM_ID: sec:overview
+   :END:
+
+   Diagram in cref:fig:Component below.
+
+
+   #+BEGIN_SRC plantuml :exports results :file ../static/container.svg
+      !include ../static/style.puml
+      !include <C4/C4_Container.puml>
+      !include <C4/C4_Component.puml>
+      'LAYOUT_WITH_LEGEND()
+
+      title [Component diagram]  Sinspekto
+
+      Person(user, "User","Application user")
+
+      Container_Boundary(gui, "GUI Application") {
+        Component(qttodds, "Sinspekto QtToDds", "Component: sinspekto", "Holds DDS domain participant and wrappers classes.")
+        Component(qml_comp, "QML element", "Component: QML", "A built-in QML element")
+        Component(sinspekto, "Sinspekto element", "Component: Sinspekto", "Translates between QML and DDS communication constructs")
+      }
+
+      System_Ext(dds, "DDS program", "An application using DDS communication")
+
+      Rel(user, gui, "Views")
+      Rel_Back_Neighbor(qttodds, sinspekto, "Retrieves DDS session data")
+      Rel(sinspekto, dds, "Sends and receives data [DDS]")
+      Rel_Neighbor(sinspekto, qml_comp, "Communicates [Qt Signals & Slots]")
+
+
+    #+END_SRC
+
+   #+CAPTION: Component diagram for Mimir.
+   #+name: fig:Component
+   #+RESULTS:
+   [[file:../static/container.svg]]
+
+
+** Add own directive
+
+   #+ATTR_RST: :title Done it: \(\mathbb{R}\)
+   #+name: helloyou2
+   #+begin_conjecture
+     You are hello too
+   #+end_conjecture
+
+
+   cref:helloyou2. Cool cref:helloyou2.
+
+   #+ATTR_RST: :title DoIt2
+   #+name: ungiven1
+   #+begin_conclusion
+     You are unforgiven too. $\pi = \Z$. But what $\RR$.
+   #+end_conclusion
+
+   ref:ungiven1 or cref:ungiven1. And cref:ungiven2.
+
+
+   #+begin_warning
+     You cannot reference built-in admonitions?
+   #+end_warning
+
+   + [ ] Figure out how to add support for pseudocode.js or algpseudocode
+   + [ ] Maybe an alternative is to render to an image and include that..
+   #+HEADER: :headers '("\\usepackage{algorithm}\n\\usepackage{algpseudocode}")
+   #+name: euclid
+   #+BEGIN_SRC latex
+   \begin{algorithm}
+     \caption{Euclid’s algorithm}
+     \label{euclid}
+     \begin{algorithmic}[1] % The number tells where the line numbering should start
+       \Procedure{Euclid}{$a,b$} \Comment{The g.c.d. of a and b}
+       \State $r\gets a \bmod b$
+       \While{$r\not=0$} \Comment{We have the answer if r is 0}
+       \State $a \gets b$
+       \State $b \gets r$
+       \State $r \gets a \bmod b$
+       \EndWhile\label{euclidendwhile}
+       \State \textbf{return} $b$\Comment{The gcd is b}
+       \EndProcedure
+     \end{algorithmic}
+   \end{algorithm}
+   #+END_SRC
+
+
+
+** Test proper export of stuff to rst and latex
+
+   Objective: devise notation that works for both latex and rst exports (and optionally in org also)
+   + [X] To which extent is org-ref appropriate? If modifications are possible, sufficient.
+   + [X] Fix styling of equations for rst to get numbering after equation
+   + Which modifications to sphinx (setup + plugins) and org-rst exporter or similar is needed?
+     + [X] redefine org-ref-ref-export for overriding =ref:label= to =:ref:label= in rst, org-ref-core.el
+     + [X] redefine org-ref-eqref-export for overriding =eqref:label= to =:eq:label= in rst, org-ref-core.el
+     + [X] Other modifications
+   + [X] Export a bibliography directive manually in rst, see [[https://sphinxcontrib-bibtex.readthedocs.io/en/latest/index.html][this]]
+   + [X] override cref: so that it becomes =:numref:`fig:test`= when exported to rst
+   + [X] how to override eqref: so that it becomes =:eq:`eq:one`= in rst?
+   + [X] how to override cite: so that it becomes =:cite:`albert2016numerical`= in rst?
+   + [X] how to modify latex block to accept attributes for the math directive? (:label:) in rst?
+
+   | What          | org (or org-ref)                              | latex ok           | rst ok | modifications              | exports ok | Comment                                               |
+   |---------------+-----------------------------------------------+--------------------+--------+----------------------------+------------+-------------------------------------------------------|
+   | Section       | Section ref:sec:overview                      | yes                | yes    | no                         | yes        | number in latex, title in rst, need prepend Section   |
+   | Figure        | cref:fig:Component                            | yes                | yes    | =:numref:`fig:Component`=  | yes        | Modified a org-ref function, but with type before     |
+   | Table         | cref:tab:test                                 | yes                | yes    | =:numref:`tab:test`=       | yes        | Note that ref will be replaces with numref - may fail |
+   | Equation ref  | eqref:eq:one                                  | yes =Eq. (number)= | yes    | =:eq:`eq:one`=             | yes        | Modified org-ref function                             |
+   | cref/Cref     |                                               |                    |        |                            |            |                                                       |
+   | latex to math | e.g. =\begin{equation} \end{equation}=        | yes                | no     | math directive needs label | no         |                                                       |
+   | Basic cite    | cite:albert2016numerical                      | yes                | no     | =:cite:`refs`=             | yes        | need sphinxcontrib.bibtex                             |
+   | Cite several  | cite:albert2016numerical,haugen2015monitoring | yes                | no     | =:cite:`ref1,ref2`=        | yes        | need sphinxcontrib.bibtex                             |
+   | Biblography   | =bibliography:/home/joakim/bibs/bib.bib=      | yes                | no     | no                         | no         | Use own directive when exporting to rst               |
+   |---------------+-----------------------------------------------+--------------------+--------+----------------------------+------------+-------------------------------------------------------|
+   | Figure        | [[fig:Component]]                                 | yes                | no     | -                          | no         | Native org-mode, but not numbering                    |
+   | Table         | [[tab:test]]                                      | yes                | no     | -                          | no         | Native org-mode, but not rst                          |
+   | Complex cite  | [[cite:haugen2017winch][p. 5]]                | yes                | no     | TBD                        |            | Unknown                                               |
+
+*** Figure
+
+    cref:fig:Component shows something.
+
+*** Table
+
+    See  cref:tab:test.
+
+    #+ATTR_RST: :align center
+    #+CAPTION: Example table.
+    #+Name: tab:test
+    | Name | Phone | Age       |
+    |------+-------+-----------|
+    |      |       | What am I |
+    |      | 0     |           |
+    |------+-------+-----------|
+    | c    | b     | d         |
+    | ba   | h     | n         |
+    | a    | k     | c         |
+    |------+-------+-----------|
+
+*** Equations
+
+    This is an inline equation: $e=\frac{m}{c}^3$.
+
+    The equation below without label.
+
+    $$ f = abc\label{eq:null} $$
+
+
+    #+name: eq:one
+    \begin{equation}
+    e = mc^3
+    \end{equation}
+
+    MathJax supported latex notation [[http://docs.mathjax.org/en/latest/input/tex/macros/][tex/macros]]. rst autowrapping of equations does not
+    work always work, depending on the latex blocks used. If you do not want the rst to
+    mathjax parsing to wrap your equations, add =#+ATTR_RST: :nowrap t=. The sacrifice is
+    loosing visible numbering for that math block. Also, using =align= does not seem to
+    produce numbering(?), so you need to add a tag, but this is not properly reflected in
+    the reference in html. If you need properly numbered equation, you should simplify and
+    sacrifice. How many
+    #+ATTR_RST: :nowrap t
+    \begin{align}
+    e &= mc^2 \in \mathbb{Z}\tag{Not Einstein} \\
+    m &\approxeq \frac{\sqrt{c^2}}{e} \\
+    0 &= \unit{0}{\kelvin}
+    \end{align}
+
+    #+name: eq:two
+    \begin{align}
+    e &= mc^2 \in \mathbb{Z}\\
+    m &\approxeq \frac{\sqrt{c^2}}{e}
+    \end{align}
+
+
+    See eqref:eq:one, not eqref:eq:two.
+
+
+*** Gnuplot figure
+
+    See  cref:fig:simple, which was compiled with gnuplot.
+
+    #+begin_src gnuplot :exports results :results value file :file ../static/agnu.svg
+      set terminal svg background rgb '#ffffff'
+      set title "Simple Qslots" font ",20"
+      set key left box
+      set samples 50
+      set style data points
+
+      plot [-10:10] sin(x),atan(x),cos(atan(x))
+    #+end_src
+
+    #+ATTR_RST: :align center
+    #+caption: Gnuplot test.
+    #+name: fig:simple
+    #+RESULTS:
+    [[file:../static/agnu.svg]]
+
+*** Code execution
+
+    See cref:code:test.
+
+    #+caption: Casadi with gnuplot source code.
+    #+name: code:test
+    #+header: :results value
+    #+header: :flags "-std=c++11 -fPIC"
+    #+Header: :libs "-lstdc++"
+    #+header: :includes (list "<fstream>" "<sstream>" "<iostream>" "<string>" "<vector>")
+    #+header: :namespaces (list "std")
+    #+header: :main no :exports both
+    #+begin_src cpp +n 0
+      int main(){
+
+        std::cout << "Hello world" << std::endl;
+        return 0;
+      }
+    #+end_src
+
+    #+RESULTS: code:test
+    : Hello world
+
+*** Citations
+
+   See cite:albert2016numerical.
+
+
+   #+begin_export latex
+   \bibliographystyle{plain}
+   \bibliography{../static/bib.bib}
+   #+end_export
+   #+begin_export rst
+   .. bibliography:: ../static/bib.bib
+     :style: plain
+     :cited:
+   #+end_export

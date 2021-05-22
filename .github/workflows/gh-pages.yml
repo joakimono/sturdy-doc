@@ -1,0 +1,47 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    container:
+      image: ubuntu:20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup build deps
+      - run: |
+          apt-get update
+          apt-get install -y cmake pip doxygen emacs-nox graphviz plantuml wget pandoc
+          wget https://sourceforge.net/projects/plantuml/files/plantuml.jar
+          mv plantuml.jar /usr/share/plantuml/
+          emacs -Q --batch -l docs/emacs-install-pkgs.el
+          python3 -m pip install -r docs/requirements.ext --upgrade
+      - name: Build doc
+      - run: |
+          mkdir build
+          pushd build
+          cmake ..
+          cmake --build . --target doc
+          popd
+          mkdir public
+          mv build/docs/sphinx/html/ ./public/
+          apt-get update
+          apt-get install tree
+          cd public
+          tree
+
+#      - name: Deploy
+#        uses: peaceiris/actions-gh-pages@v3
+#        if: github.ref == 'refs/heads/main'
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_dir: ./public
+#          publish_branch: gh-pages
+#          cname: wow.your-domain.ai

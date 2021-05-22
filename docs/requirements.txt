@@ -1,0 +1,9 @@
+breathe
+sphinx
+doxyqml
+exhale
+sphinx
+sphinx-rtd-theme
+sphinxcontrib-plantuml
+sphinxcontrib-bibtex
+recommonmark

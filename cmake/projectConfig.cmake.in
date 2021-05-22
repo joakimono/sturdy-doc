@@ -1,0 +1,36 @@
+include(CMakeFindDependencyMacro)
+
+list(INSERT CMAKE_MODULE_PATH 0 "@@_@PACKAGE_INSTALL_CONFIGDIR@_@@")
+
+find_dependency(kluster-scripts QUIET)
+
+list(REMOVE_AT CMAKE_MODULE_PATH 0)
+
+set(_supported_components "@PROJECT_COMPONENTS@")
+
+@@_@PACKAGE_INIT@_@@
+
+set(_this_project_name @PROJECT_NAME@)
+
+
+if(NOT TARGET @PROJECT_NAME@::@PROJECT_NAME@)
+  include("@@_@PACKAGE_INSTALL_CONFIGDIR@_@@/${_this_project_name}Targets.cmake")
+
+  foreach(_comp ${@PROJECT_NAME@_FIND_COMPONENTS})
+    if (NOT ";${_supported_components};" MATCHES _comp)
+      list(APPEND _unsupported_components ${_comp})
+    else()
+      include("@@_@PACKAGE_INSTALL_CONFIGDIR@_@@/${_this_project_name}${_comp}Targets.cmake")
+    endif()
+  endforeach()
+
+endif()
+
+# Set components also?
+set(@PROJECT_NAME@_LIBRARIES @PROJECT_NAME@::@PROJECT_NAME@)
+
+check_required_components(@PROJECT_NAME@)
+
+if(NOT @PROJECT_NAME@_FOUND)
+  set(@PROJECT_NAME@_NOT_FOUND_MESSAGE "The following unsupported components were requested: ${_unsupported_components}")
+endif()

@@ -1,0 +1,73 @@
+* Welcome to Test project's documentation!
+
+#+BEGIN_EXPORT rst
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Installation
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Usage
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Quick Reference
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Markdown sources
+   :glob:
+
+   md/test.md
+   md/test2.md
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Org sources
+   :glob:
+
+   rst/test.rst
+   rst/orgtest2.rst
+   rst/test3.rst
+   rst/todo.rst
+
+#+END_EXPORT
+
+#+BEGIN_src emacs-lisp :results drawer :exports results  :wrap EXPORT rst
+(make-variable-buffer-local 'with-api-doc)
+(if with-api-doc
+  ".. toctree::
+     :maxdepth: 3
+     :caption: API Reference
+     :glob:
+
+     api/library-api
+     rst/final.rst
+     api_private/library-api-private
+
+     " "")
+#+END_src
+
+#+RESULTS:
+#+begin_EXPORT rst
+.. toctree::
+     :maxdepth: 3
+     :caption: API Reference
+     :glob:
+
+     api/library-root
+     rst/final.rst
+#+end_EXPORT
+
+
+* Indices and tables
+
+#+RST: * :ref:`genindex`
+
+* Some other text
+
+  + Explaining some more =ehere=
+  #+begin_src bash :results output :shebang "#!/bin/bash"
+    cmake --build . --target doc
+  #+end_src
