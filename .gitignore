@@ -2,3 +2,5 @@ bld/
 *build/
 docs/static/*.png
 docs/static/*.svg
+docs/org/ltximg
+build*/

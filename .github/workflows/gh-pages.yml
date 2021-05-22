@@ -24,7 +24,7 @@ jobs:
           wget https://sourceforge.net/projects/plantuml/files/plantuml.jar
           mv plantuml.jar /usr/share/plantuml/
           emacs -Q --batch -l docs/emacs-install-pkgs.el
-          python3 -m pip install -r docs/requirements.ext --upgrade
+          python3 -m pip install -r docs/requirements.txt --upgrade
       - name: Build doc
         run: |
           mkdir build
