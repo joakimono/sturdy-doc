@@ -3,6 +3,7 @@ window.MathJax = {
     macros: {
       Z: "\\mathbb{Z}",
       dat: "\\dot",
+      RR: "\\bf R",
       st: "\\operatorname{s.t}",
       col: "\\operatorname{col}",
       row: "\\operatorname{row}",
