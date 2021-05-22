@@ -1,0 +1,27 @@
+.. _exhale_struct_structocean_1_1creature:
+
+Struct creature
+===============
+
+- Defined in :ref:`file_Fishy.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``protected ocean::fish`` (:ref:`exhale_class_classocean_1_1fish`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: ocean::creature
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:
+   :project: sturdy

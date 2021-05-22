@@ -1,0 +1,27 @@
+.. _exhale_struct_structshrimp:
+
+Struct shrimp
+=============
+
+- Defined in :ref:`file_src_Invisible.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``protected creature``
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: shrimp
+   :members:
+   :protected-members:
+   :private-members:
+   :undoc-members:
+   :project: sturdy-private

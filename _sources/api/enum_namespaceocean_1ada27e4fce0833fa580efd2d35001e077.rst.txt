@@ -1,0 +1,15 @@
+.. _exhale_enum_namespaceocean_1ada27e4fce0833fa580efd2d35001e077:
+
+Enum fish_type
+==============
+
+- Defined in :ref:`file_Fishy.hpp`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: ocean::fish_type
+   :no-link:
+   :project: sturdy

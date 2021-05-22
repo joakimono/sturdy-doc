@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="802px" preserveAspectRatio="none" style="width:1074px;height:802px;background:#FFFFFF;" version="1.1" viewBox="0 0 1074 802" width="1074px" zoomAndPan="magnify"><defs><filter height="300%" id="feg7xgmpajv7b" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="Helvetica" font-size="18" lengthAdjust="spacing" textLength="240" x="410.5" y="16.708">Container diagram for Test</text><!--MD5=[84dda40acb3410cad7262261daba2aaf]
+cluster c1--><rect fill="#FFFFFF" height="423" style="stroke:#444444;stroke-width:1.0;stroke-dasharray:7.0,7.0;" width="780" x="7" y="221.9531"/><text fill="#444444" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="150" x="322" y="238.8047">Internet Banking</text><text fill="#444444" font-family="Helvetica" font-size="12" lengthAdjust="spacing" textLength="55" x="369.5" y="253.7168">[System]</text><!--MD5=[d40ecb68fd03c4f349b7481a726a4cee]
+entity web_app--><rect fill="#438DD5" height="117.7813" style="stroke:#3C7FC0;stroke-width:1.5;" width="209" x="23.5" y="280.9531"/><text fill="#FFFFFF" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="142" x="57" y="305.8047">Web Application</text><text fill="#FFFFFF" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="114" x="71" y="320.7168">[Java, Spring MVC]</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="0" x="130" y="336.542"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="181" x="37.5" y="352.8389">Delivers the static content</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="170" x="41" y="369.1357">and the Internet banking</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="27" x="114.5" y="385.4326">SPA</text><!--MD5=[33573e971ff506c0f246109ca3fd77bd]
+entity spa--><rect fill="#438DD5" height="134.0781" style="stroke:#3C7FC0;stroke-width:1.5;" width="190" x="326" y="272.9531"/><text fill="#FFFFFF" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="143" x="349.5" y="297.8047">Single-Page App</text><text fill="#FFFFFF" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="128" x="357" y="312.7168">[JavaScript, Angular]</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="0" x="423" y="328.542"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="162" x="340" y="344.8389">Provides all the Internet</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="159" x="339.5" y="361.1357">banking functionality to</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="156" x="341" y="377.4326">cutomers via their web</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="56" x="393" y="393.7295">browser</text><!--MD5=[5030a8aa1c23fb7aeae2de0ea10fd921]
+entity mobile_app--><rect fill="#438DD5" height="134.0781" style="stroke:#3C7FC0;stroke-width:1.5;" width="220" x="551" y="272.9531"/><text fill="#FFFFFF" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="97" x="612.5" y="297.8047">Mobile App</text><text fill="#FFFFFF" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="87" x="617.5" y="312.7168">[C#, Xamarin]</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="0" x="663" y="328.542"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="189" x="566.5" y="344.8389">Provides a limited subset of</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="140" x="589" y="361.1357">the Internet banking</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="200" x="561" y="377.4326">functionality to customers via</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="130" x="596" y="393.7295">their mobile device</text><!--MD5=[f50ff5e4cd64f259303fc83dba1819fc]
+entity database--><path d="M170,511.9531 C170,501.9531 280,501.9531 280,501.9531 C280,501.9531 390,501.9531 390,511.9531 L390,618.7344 C390,628.7344 280,628.7344 280,628.7344 C280,628.7344 170,628.7344 170,618.7344 L170,511.9531 " fill="#438DD5" style="stroke:#3C7FC0;stroke-width:1.5;"/><path d="M170,511.9531 C170,521.9531 280,521.9531 280,521.9531 C280,521.9531 390,521.9531 390,511.9531 " fill="none" style="stroke:#3C7FC0;stroke-width:1.5;"/><text fill="#FFFFFF" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="83" x="238.5" y="540.8047">Database</text><text fill="#FFFFFF" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="97" x="231.5" y="555.7168">[SQL Database]</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="0" x="282" y="571.542"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="157" x="201.5" y="587.8389">Stores user registraion</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="163" x="196.5" y="604.1357">information, hased auth</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="200" x="180" y="620.4326">credentials, access logs, etc.</text><!--MD5=[726c106c092cc8d8468511de31e03881]
+entity backend_api--><rect fill="#438DD5" height="101.4844" style="stroke:#3C7FC0;stroke-width:1.5;" width="204" x="542" y="514.9531"/><text fill="#FFFFFF" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="132" x="578" y="539.8047">API Application</text><text fill="#FFFFFF" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="153" x="567.5" y="554.7168">[Java, Docker Container]</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="0" x="646" y="570.542"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="176" x="556" y="586.8389">Provides Internet banking</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="129" x="579.5" y="603.1357">functionality via API</text><!--MD5=[2f46c1e1d5ed8feb68cc6cb4d8a98ab2]
+entity captain--><rect fill="#08427B" height="119.2188" style="stroke:#073B6F;stroke-width:1.5;" width="167" x="579.5" y="27.9531"/><image height="48" width="48" x="639" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAIAAADYYG7QAAACD0lEQVR4Xu2YoU4EMRCGT+4j8Ai8AhaH4QHgAUjQuFMECUgMIUgwJAgMhgQsAYUiJCiQIBBY+EITsjfTdme6V24v4c8vyGbb+ZjOtN0bNcvjQXmkH83WvYBWto6PLm6v7p7uH1/w2fXD+PBycX1Pv2l3IdDm/vn7x+dXQiAubRzoURa7gRZWd0iGRIiJbOnhnfYBQZNJjNbuyY2eJG8fkDE3bbG4ep6MHUAsgYxmE3nVs6VsBWJSGccsOlFPmLIViMzLOB7pCVO2AtHJMohH7Fh6zqitQK7m0rJvAVYgGcEpe//PLdDz65sM4pF9N7ICcXDKIB5Nv6j7tD0NoSdM2QrU9Gg0ewE1LqBhHR3BBdvj2vapnidjHxD/q6vd7Pvhr31AwcY8eXMTXAKECZZJFXuEq27aLgQK5uLMohCenGGuGewOxSjBvYBqeG6B+Nqiblggdjnc+ZXDy+FNFpFzw76O3UBAROuXh6FoiAcf5g9eTvUgzy0nWg6I8cXHRUpg5bOVBCo+KDpFajOf23GgPme7RSQ+lacIENUgJ6gg1k6HjgOlqnLqip4tEuhv0hNEMXUD0clyXE3p6pZA0S2nnvTlXwLJEZWlb7cTQH1+USgTN4VhAenm/wea1OCAOmqo6fE1WCb9WSKBah+rbUWPWAmE2Rvk0ApiB45eOyNAzU8xcTvj8KvkKEoOaIYeHNA3ZuygAvFMUO0AAAAASUVORK5CYII=" y="37.9531"/><text fill="#FFFFFF" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="67" x="629.5" y="100.8047">Caption</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="0" x="665" y="117.5732"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="143" x="593.5" y="133.8701">A caption of the boat</text><!--MD5=[088d2f8db2a642851fdacc5e01750e2a]
+entity email_system--><rect fill="#999999" height="87.5156" style="stroke:#8A8A8A;stroke-width:1.5;" width="177" x="806.5" y="295.9531"/><text fill="#FFFFFF" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="123" x="833.5" y="320.8047">E-Mail System</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="0" x="897" y="337.5732"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="149" x="820.5" y="353.8701">The internal Microsoft</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="122" x="834" y="370.167">Exchange system</text><!--MD5=[6c7a3b43a568b319c0b7c06f28312f5c]
+entity banking_system--><rect fill="#999999" height="138.7344" style="stroke:#8A8A8A;stroke-width:1.5;" width="204" x="864" y="495.9531"/><text fill="#FFFFFF" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="169" x="878.5" y="520.8047">Mainframe Banking</text><text fill="#FFFFFF" font-family="Helvetica" font-size="16" font-weight="bold" lengthAdjust="spacing" textLength="66" x="933" y="539.4297">System</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="0" x="968" y="556.1982"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="142" x="895" y="572.4951">Stores all of the core</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="180" x="874" y="588.792">banking information about</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="150" x="889" y="605.0889">customers, accounts,</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="119" x="906.5" y="621.3857">transactions, etc.</text><!--MD5=[92848cbaf65985a669855153c5362c37]
+entity customer--><ellipse cx="503" cy="87.4531" fill="#FEFECE" filter="url(#feg7xgmpajv7b)" rx="8" ry="8" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="66" x="470" y="117.4482">customer</text><!--MD5=[1db22ac813c1bde34f97d5d397f43401]
+link customer to web_app--><path d="M493.65,94.3631 C465.53,112.1631 379.36,166.9131 309,213.9531 C279.17,233.8931 246.85,256.0431 217.89,276.0831 " fill="none" id="customer-to-web_app" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="210.99,280.8631,219.2735,278.7695,215.8544,273.839,210.99,280.8631" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="368.5" y="189.0918">Uses</text><text fill="#666666" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="48" x="362" y="203.0605">[HTTPS]</text><!--MD5=[42bca9335c471dd5687971eddc2ce696]
+link customer to spa--><path d="M500.36,96.5031 C491.99,122.0831 465.36,203.4231 445.24,264.8931 " fill="none" id="customer-to-spa" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="442.7,272.6731,448.0383,266.0021,442.3355,264.1369,442.7,272.6731" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="478.5" y="189.0918">Uses</text><text fill="#666666" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="48" x="472" y="203.0605">[HTTPS]</text><!--MD5=[6a3b2a774ab5cda697132bf2df7378cb]
+link customer to mobile_app--><path d="M508.08,96.5031 C524.28,122.1831 575.94,204.0931 614.76,265.6431 " fill="none" id="customer-to-mobile_app" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="619.19,272.6731,617.4638,264.3053,612.3873,267.5036,619.19,272.6731" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="573" y="196.0918">Uses</text><!--MD5=[267aaff8de75b3021fd42ee691394a74]
+link web_app to spa--><path d="M232.54,339.9531 C260.21,339.9531 290.07,339.9531 317.67,339.9531 " fill="none" id="web_app-to-spa" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="325.78,339.9531,317.78,336.9531,317.78,342.9531,325.78,339.9531" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="57" x="250.75" y="334.0918">Delivers</text><!--MD5=[bc7390f4e355aa3c10055994fbe0bc64]
+link spa to backend_api--><path d="M466.24,407.2231 C481.08,427.0231 498.32,448.1631 516,465.9531 C531.23,481.2731 548.88,496.2931 566.13,509.8031 " fill="none" id="spa-to-backend_api" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="572.45,514.7131,567.969,507.4385,564.2906,512.1786,572.45,514.7131" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="562" y="449.0918">Uses</text><text fill="#666666" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="125" x="517" y="463.0605">[async, JSON/HTTPS]</text><!--MD5=[4a060ef3c0a9a44de9559bdf6088d4f6]
+link mobile_app to backend_api--><path d="M655.97,407.1031 C653.56,438.7731 650.7,476.3331 648.38,506.8131 " fill="none" id="mobile_app-to-backend_api" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="647.78,514.8131,651.372,507.0609,645.3889,506.6105,647.78,514.8131" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="699" y="449.0918">Uses</text><text fill="#666666" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="125" x="654" y="463.0605">[async, JSON/HTTPS]</text><!--MD5=[de3560257cebaab78c25ec3e8b1e3bce]
+reverse link database to backend_api--><path d="M398.47,565.4531 C444.77,565.4531 497.35,565.4531 541.94,565.4531 " fill="none" id="database-backto-backend_api" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="390.2,565.4531,398.2,568.4531,398.2,562.4531,390.2,565.4531" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="111" x="408.5" y="531.5918">Reads from and</text><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="64" x="434" y="545.5605">writes to</text><text fill="#666666" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="75" x="428.5" y="559.5293">[sync, JDBC]</text><!--MD5=[67bdad0b253fe975f176764d2733cbf2]
+reverse link customer to email_system--><path d="M513.97,102.8331 C524.81,116.0931 542.56,135.4231 562,146.9531 C651.75,200.1731 699.37,157.3131 787,213.9531 C819.52,234.9731 847.77,268.5831 867.22,295.6631 " fill="none" id="customer-backto-email_system" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="508.96,96.5231,511.5787,104.6559,516.2806,100.9287,508.96,96.5231" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="118" x="772" y="196.0918">Sends e-mails to</text><!--MD5=[8cec5c10976c4db6b86b100b5fe1b5ce]
+reverse link email_system to backend_api--><path d="M857.77,390.3231 C838.34,414.4831 813.37,443.1831 788,465.9531 C768.61,483.3531 746,500.1731 724.52,514.8531 " fill="none" id="email_system-backto-backend_api" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="862.84,383.9631,855.5084,388.3503,860.2009,392.0893,862.84,383.9631" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="142" x="817" y="449.0918">Sends e-mails using</text><text fill="#666666" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="78" x="849" y="463.0605">[sync, SMTP]</text><!--MD5=[de57110bb978599a1dd726a1d6276969]
+link backend_api to banking_system--><path d="M746.33,565.4531 C781.1,565.4531 820.12,565.4531 855.5,565.4531 " fill="none" id="backend_api-to-banking_system" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="863.94,565.4531,855.94,562.4531,855.94,568.4531,863.94,565.4531" style="stroke:#000000;stroke-width:1.0;"/><text fill="#666666" font-family="Helvetica" font-size="12" font-weight="bold" lengthAdjust="spacing" textLength="35" x="787.5" y="531.5918">Uses</text><text fill="#666666" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="77" x="764.5" y="545.5605">[sync/async,</text><text fill="#666666" font-family="Helvetica" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="72" x="769" y="559.5293">XML/HTTPS]</text><rect fill="#FFFFFF" height="128.0781" rx="5" ry="5" style="stroke:#FFFFFF;stroke-width:1.0;" width="144" x="908" y="657.9531"/><text fill="#000000" font-family="Helvetica" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="59" x="914" y="677.9482">Legend</text><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="0" x="977" y="677.9482"/><rect fill="#08427B" height="16.2969" style="stroke:none;stroke-width:1.0;" width="132" x="914" y="681.25"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="49" x="918" y="694.2451">person</text><rect fill="#1168BD" height="16.2969" style="stroke:none;stroke-width:1.0;" width="132" x="914" y="697.5469"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="50" x="918" y="710.542">system</text><rect fill="#438DD5" height="16.2969" style="stroke:none;stroke-width:1.0;" width="132" x="914" y="713.8438"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="65" x="918" y="726.8389">container</text><rect fill="#686868" height="16.2969" style="stroke:none;stroke-width:1.0;" width="132" x="914" y="730.1406"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="108" x="918" y="743.1357">external person</text><rect fill="#999999" height="16.2969" style="stroke:none;stroke-width:1.0;" width="132" x="914" y="746.4375"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="109" x="918" y="759.4326">external system</text><rect fill="#B3B3B3" height="16.2969" style="stroke:none;stroke-width:1.0;" width="132" x="914" y="762.7344"/><text fill="#FFFFFF" font-family="Helvetica" font-size="14" lengthAdjust="spacing" textLength="124" x="918" y="775.7295">external container</text><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="914" x2="1046" y1="664.9531" y2="664.9531"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="914" x2="1046" y1="681.25" y2="681.25"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="914" x2="1046" y1="697.5469" y2="697.5469"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="914" x2="1046" y1="713.8438" y2="713.8438"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="914" x2="1046" y1="730.1406" y2="730.1406"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="914" x2="1046" y1="746.4375" y2="746.4375"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="914" x2="1046" y1="762.7344" y2="762.7344"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="914" x2="1046" y1="779.0313" y2="779.0313"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="914" x2="914" y1="664.9531" y2="779.0313"/><line style="stroke:#FFFFFF;stroke-width:1.0;" x1="1046" x2="1046" y1="664.9531" y2="779.0313"/><!--MD5=[d85cb0b154a44b79079477336cb56ec6]
+@startuml
+!include ../static/style.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Container diagram for Test
+
+Person(captain, Caption, "A caption of the boat")
+
+System_Boundary(c1, "Internet Banking") {
+    Container(web_app, "Web Application", "Java, Spring MVC", "Delivers the static content and the Internet banking SPA")
+    Container(spa, "Single-Page App", "JavaScript, Angular", "Provides all the Internet banking functionality to cutomers via their web browser")
+    Container(mobile_app, "Mobile App", "C#, Xamarin", "Provides a limited subset of the Internet banking functionality to customers via their mobile device")
+    ContainerDb(database, "Database", "SQL Database", "Stores user registraion information, hased auth credentials, access logs, etc.")
+    Container(backend_api, "API Application", "Java, Docker Container", "Provides Internet banking functionality via API")
+}
+
+System_Ext(email_system, "E-Mail System", "The internal Microsoft Exchange system")
+System_Ext(banking_system, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+
+Rel(customer, web_app, "Uses", "HTTPS")
+Rel(customer, spa, "Uses", "HTTPS")
+Rel(customer, mobile_app, "Uses")
+
+Rel_Neighbor(web_app, spa, "Delivers")
+Rel(spa, backend_api, "Uses", "async, JSON/HTTPS")
+Rel(mobile_app, backend_api, "Uses", "async, JSON/HTTPS")
+Rel_Back_Neighbor(database, backend_api, "Reads from and writes to", "sync, JDBC")
+
+Rel_Back(customer, email_system, "Sends e-mails to")
+Rel_Back(email_system, backend_api, "Sends e-mails using", "sync, SMTP")
+Rel_Neighbor(backend_api, banking_system, "Uses", "sync/async, XML/HTTPS")
+
+
+@enduml
+
+@startuml
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendBorderColor transparent
+skinparam LegendBackgroundColor transparent
+skinparam LegendFontColor #FFFFFF
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor #FFFFFF
+    FontStyle plain
+    BackgroundColor #FFFFFF
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 6
+    StereotypeFontColor #FFFFFF
+    FontColor #444444
+    BorderColor #444444
+    BackgroundColor #FFFFFF
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultTextAlignment center
+
+skinparam wrapWidth 200
+skinparam maxMessageSize 150
+
+skinparam LegendBorderColor transparent
+skinparam LegendBackgroundColor transparent
+skinparam LegendFontColor #FFFFFF
+
+skinparam rectangle {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam database {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam queue {
+    StereotypeFontSize 12
+    shadowing false
+}
+
+skinparam Arrow {
+    Color #666666
+    FontColor #666666
+    FontSize 12
+}
+
+skinparam package {
+    StereotypeFontSize 6
+    StereotypeFontColor #FFFFFF
+    FontStyle plain
+    BackgroundColor #FFFFFF
+}
+
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 6
+    StereotypeFontColor #FFFFFF
+    FontColor #444444
+    BorderColor #444444
+    BackgroundColor #FFFFFF
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam database<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+skinparam queue<<person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #08427B
+    BorderColor #073B6F
+}
+
+skinparam rectangle<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam database<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_person>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #686868
+    BorderColor #8A8A8A
+}
+
+skinparam rectangle<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam database<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+skinparam queue<<system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #1168BD
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam database<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+skinparam queue<<external_system>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #999999
+    BorderColor #8A8A8A
+}
+
+
+
+
+sprite $person [48x48/16] {
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+000000000000025788300000000005886410000000000000
+000000000007DFFFFFFD9643347BFFFFFFFB400000000000
+0000000004EFFFFFFFFFFFFFFFFFFFFFFFFFFB1000000000
+000000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFD200000000
+00000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE10000000
+0000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB0000000
+000000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5000000
+000003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD000000
+000009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF200000
+00000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF600000
+00000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF800000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+00001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA00000
+00000EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF700000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+0000008FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD3000000
+000000014555555555555555555555555555555300000000
+000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000
+}
+
+sprite $person2 [48x48/16] {
+0000000000000000000049BCCA7200000000000000000000
+0000000000000000006EFFFFFFFFB3000000000000000000
+00000000000000001CFFFFFFFFFFFF700000000000000000
+0000000000000001EFFFFFFFFFFFFFF80000000000000000
+000000000000000CFFFFFFFFFFFFFFFF6000000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+00000000000001FFFFFFFFFFFFFFFFFFF900000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFF00000000000000
+0000000000000BFFFFFFFFFFFFFFFFFFFF40000000000000
+0000000000000EFFFFFFFFFFFFFFFFFFFF70000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000FFFFFFFFFFFFFFFFFFFFF80000000000000
+0000000000000DFFFFFFFFFFFFFFFFFFFF60000000000000
+0000000000000AFFFFFFFFFFFFFFFFFFFF40000000000000
+00000000000006FFFFFFFFFFFFFFFFFFFE00000000000000
+00000000000000EFFFFFFFFFFFFFFFFFF800000000000000
+000000000000007FFFFFFFFFFFFFFFFFF100000000000000
+000000000000000BFFFFFFFFFFFFFFFF5000000000000000
+0000000000000001DFFFFFFFFFFFFFF70000000000000000
+00000000000000000BFFFFFFFFFFFF500000000000000000
+0000000000000000005DFFFFFFFFA1000000000000000000
+0000000000000000000037ABB96100000000000000000000
+000000000002578888300000000005888864100000000000
+0000000007DFFFFFFFFD9643347BFFFFFFFFFB4000000000
+00000004EFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB10000000
+0000007FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD2000000
+000006FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE100000
+00003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000
+0000BFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF50000
+0003FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD0000
+0009FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF2000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB000
+001FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA000
+000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF8000
+000DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6000
+0009FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFF2000
+0003FFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFFD0000
+0000BFFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFF50000
+00003FFFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFFB00000
+000006FFFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFFE100000
+0000007FFFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFFD2000000
+00000004EFFF8FFFFFFFFFFFFFFFFFFFFFF8FFFB10000000
+0000000007DF8FFFFFFFFFFFFFFFFFFFFFF8FB4000000000
+000000000002578888888888888888888864100000000000
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam rectangle<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam database<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+skinparam queue<<container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #438DD5
+    BorderColor #3C7FC0
+}
+
+skinparam rectangle<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam database<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+skinparam queue<<external_container>> {
+    StereotypeFontColor #FFFFFF
+    FontColor #FFFFFF
+    BackgroundColor #B3B3B3
+    BorderColor #A6A6A6
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+skinparam defaultFontName  Helvetica
+skinparam sequenceMessageAlign center
+skinparam backgroundColor White
+
+skinparam activity {
+  ArrowColor Black
+  BorderColor Black
+  BorderThickness 1
+}
+
+skinparam actor {
+  BorderColor Black
+}
+
+skinparam usecase {
+  ArrowColor Black
+  BorderColor Black
+  BorderThickness 1
+}
+
+skinparam class {
+  ArrowColor Black
+
+  BorderColor Black
+  BorderThickness 1
+}
+
+
+skinparam object {
+  ArrowColor Black
+  BorderColor Black
+}
+
+skinparam package {
+  BorderColor Black
+}
+
+skinparam note {
+  BorderColor Black
+}
+
+skinparam state {
+  ArrowColor Black
+  BorderColor Black
+}
+
+
+skinparam interface {
+  BorderColor Black
+}
+
+hide stereotype
+legend right
+|<color:#000000>**Legend**</color> |
+|<#08427B> person |
+|<#1168BD> system |
+|<#438DD5> container |
+|<#686868> external person |
+|<#999999> external system |
+|<#B3B3B3> external container |
+endlegend
+
+title Container diagram for Test
+
+rectangle "<$person>\n==Caption\n\n A caption of the boat" <<person>> as captain 
+
+rectangle "==Internet Banking\n<size:12>[System]</size>" <<boundary>> as c1  {
+    rectangle "==Web Application\n//<size:12>[Java, Spring MVC]</size>//\n\n Delivers the static content and the Internet banking SPA" <<container>> as web_app 
+    rectangle "==Single-Page App\n//<size:12>[JavaScript, Angular]</size>//\n\n Provides all the Internet banking functionality to cutomers via their web browser" <<container>> as spa 
+    rectangle "==Mobile App\n//<size:12>[C#, Xamarin]</size>//\n\n Provides a limited subset of the Internet banking functionality to customers via their mobile device" <<container>> as mobile_app 
+    database "==Database\n//<size:12>[SQL Database]</size>//\n\n Stores user registraion information, hased auth credentials, access logs, etc." <<container>> as database 
+    rectangle "==API Application\n//<size:12>[Java, Docker Container]</size>//\n\n Provides Internet banking functionality via API" <<container>> as backend_api 
+}
+
+rectangle "==E-Mail System\n\n The internal Microsoft Exchange system" <<external_system>> as email_system 
+rectangle "==Mainframe Banking System\n\n Stores all of the core banking information about customers, accounts, transactions, etc." <<external_system>> as banking_system 
+
+customer - ->> web_app : **Uses**\n//<size:12>[HTTPS]</size>//
+customer - ->> spa : **Uses**\n//<size:12>[HTTPS]</size>//
+customer - ->> mobile_app : **Uses**
+
+web_app ->> spa : **Delivers**
+spa - ->> backend_api : **Uses**\n//<size:12>[async, JSON/HTTPS]</size>//
+mobile_app - ->> backend_api : **Uses**\n//<size:12>[async, JSON/HTTPS]</size>//
+database <<- backend_api : **Reads from and writes to**\n//<size:12>[sync, JDBC]</size>//
+
+customer <<- - email_system : **Sends e-mails to**
+email_system <<- - backend_api : **Sends e-mails using**\n//<size:12>[sync, SMTP]</size>//
+backend_api ->> banking_system : **Uses**\n//<size:12>[sync/async, XML/HTTPS]</size>//
+
+
+@enduml
+
+PlantUML version 1.2021.6(Fri May 14 07:09:51 UTC 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: ANSI_X3.4-1968
+Language: en
+Country: US
+--></g></svg>

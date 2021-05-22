@@ -1,0 +1,77 @@
+
+This is an org test document
+----------------------------
+
+There are some trouble with cross-reference between documents.
+I am curious about `these <orgtest2.html>`_
+I am curious about :ref:`those <rst/orgtest2:This here>`
+I am curious about :doc:`nothing <orgtest2>`
+
+Intersphinx :doc:`sphinx:usage/extensions/intersphinx`.  I like sinspekto
+``rst::doc:`sinspekto:api/library-api```. Currently unable to create cross references to
+cpp for some reason, can instead use ``rst::doc:`sinspekto:api/classAxisEqualizer``` to
+point to page.
+
+.. note::
+
+    Some of the links above assume that there is a localhost server at 20000 hosting sinspekto doc
+
+Admonition
+~~~~~~~~~~
+
+.. seealso::
+
+    `admonition <https://docutils.sourceforge.io/0.7/docs/ref/rst/directives.html#admonitions>`_
+
+.. note::
+
+    This is new anote
+
+.. warning::
+
+    This is a warning. If :math:`a^2=b` and :math:`b=2`, then the solution must be
+    either 
+
+    .. math::
+
+        a=+\sqrt{2}
+
+     or 
+
+    .. math::
+
+        a=-\sqrt{2}.
+
+.. danger::
+
+    This is a danger :class:`ocean::fish` and ::func:`ocean::fish::fish_me`
+
+.. tip::
+
+    This is a tip.
+
+    - `sphinx cpp domain linking strategies <https://www.sphinx-doc.org/en/latest/usage/restructuredtext/domains.html#cpp-domain>`_.
+
+    - `more usage tips from Exhale <https://exhale.readthedocs.io/en/latest/usage.html>`_
+
+- [2/2] In org-mode
+
+  - ☑ Add plantuml
+
+    - As rst block
+
+    - As code block and export results
+
+  - ☑ Add math equation
+
+.. uml::
+
+    !include ../static/style.puml
+    fish <|-- shark
+
+.. image:: ../static/plant.svg
+
+This resource is also useful for plantuml stuff `3rd party doc <https://plantuml-documentation.readthedocs.io/en/latest/index.html>`_.
+A good styling option `C4 method <https://github.com/RicardoNiepel/C4-PlantUML/blob/master/C4.puml>`_. See how to use in `this guide <https://crashedmind.github.io/PlantUMLHitchhikersGuide/C4/C4Stdlib.html#c4plantuml-label>`_.
+
+.. image:: ../static/factory.svg

@@ -1,0 +1,636 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Quick view of org-mode to html &mdash; sturdy  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/eq_fix.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/enumerable.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/icon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="../_static/mathwork.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="[7/10] Setup of documentation" href="todo.html" />
+    <link rel="prev" title="Let us do it" href="orgtest2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #00457c" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> sturdy
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Markdown sources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../md/test.html">This is a markdown test document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../md/test2.html">This is another markdown test document</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../md/test2.html#will-it-work">Will it work</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Org sources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="test.html">This is an org test document</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="test.html#admonition">Admonition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orgtest2.html">Let us do it</a></li>
+<li class="toctree-l1"><a class="reference internal" href="orgtest2.html#this-here">This here</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick view of org-mode to html</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-own-directive">Add own directive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-proper-export-of-stuff-to-rst-and-latex">Test proper export of stuff to rst and latex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#figure">Figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table">Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equations">Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gnuplot-figure">Gnuplot figure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-execution">Code execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#citations">Citations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">[7/10] Setup of documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="todo.html#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/library-api.html">Public API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/library-api.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/library-api.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/library-api.html#items-listing">Items listing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/library-api.html#namespaces">Namespaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/namespace_ocean.html">Namespace ocean</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/library-api.html#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/structocean_1_1creature.html">Struct creature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/structshark.html">Struct shark</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../api/classocean_1_1fish.html">Class fish</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../api/library-api.html#enums">Enums</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api/enum_namespaceocean_1ada27e4fce0833fa580efd2d35001e077.html">Enum fish_type</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Oh yeah</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_private/library-api-private.html">Private API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api_private/library-api-private.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_private/library-api-private.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_private/library-api-private.html#items-listing">Items listing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api_private/library-api-private.html#classes-and-structs">Classes and Structs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../api_private/structshrimp.html">Struct shrimp</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sturdy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Quick view of org-mode to html</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="todo.html" class="btn btn-neutral float-right" title="[7/10] Setup of documentation" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="orgtest2.html" class="btn btn-neutral float-left" title="Let us do it" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="quick-view-of-org-mode-to-html">
+<h1>Quick view of org-mode to html<a class="headerlink" href="#quick-view-of-org-mode-to-html" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<span id="sec-overview"></span><h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Diagram in <a class="reference internal" href="#fig-component"><span class="std std-numref">Fig. 1</span></a> below.</p>
+<figure class="align-default" id="id9">
+<span id="fig-component"></span><img alt="../_images/container.svg" src="../_images/container.svg" /><figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Component diagram for Mimir.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="add-own-directive">
+<h2>Add own directive<a class="headerlink" href="#add-own-directive" title="Permalink to this headline">¶</a></h2>
+<div class="enumerable admonition" id="helloyou2">
+<p class="admonition-title"><span class="caption-number">Conjecture 1 </span>  (Done it: \(\mathbb{R}\))</p>
+<p>You are hello too</p>
+</div>
+<p><a class="reference internal" href="#helloyou2"><span class="std std-numref">Conjecture 1</span></a>. Cool <a class="reference internal" href="#helloyou2"><span class="std std-numref">Conjecture 1</span></a>.</p>
+<div class="enumerable admonition" id="ungiven1">
+<p class="admonition-title"><span class="caption-number">Conclusion 1 </span>  (DoIt2)</p>
+<p>You are unforgiven too. <span class="math notranslate nohighlight">\(\pi = \Z\)</span>. But what <span class="math notranslate nohighlight">\(\RR\)</span>.</p>
+</div>
+<p><a class="reference internal" href="#ungiven1"><span class="std std-ref">  (DoIt2)</span></a> or <a class="reference internal" href="#ungiven1"><span class="std std-numref">Conclusion 1</span></a>. And <a class="reference internal" href="todo.html#ungiven2"><span class="std std-numref">Conclusion 2</span></a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You cannot reference built-in admonitions?</p>
+</div>
+<ul class="simple">
+<li><p>☐ Figure out how to add support for pseudocode.js or algpseudocode</p></li>
+<li><p>☐ Maybe an alternative is to render to an image and include that..</p></li>
+</ul>
+<div class="highlight-tex notranslate" id="euclid"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>algorithm<span class="nb">}</span>
+  <span class="k">\caption</span><span class="nb">{</span>Euclid’s algorithm<span class="nb">}</span>
+  <span class="k">\label</span><span class="nb">{</span>euclid<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>algorithmic<span class="nb">}</span>[1] <span class="c">% The number tells where the line numbering should start</span>
+    <span class="k">\Procedure</span><span class="nb">{</span>Euclid<span class="nb">}{</span><span class="s">$</span><span class="nb">a,b</span><span class="s">$</span><span class="nb">}</span> <span class="k">\Comment</span><span class="nb">{</span>The g.c.d. of a and b<span class="nb">}</span>
+    <span class="k">\State</span> <span class="s">$</span><span class="nb">r</span><span class="nv">\gets</span><span class="nb"> a </span><span class="nv">\bmod</span><span class="nb"> b</span><span class="s">$</span>
+    <span class="k">\While</span><span class="nb">{</span><span class="s">$</span><span class="nb">r</span><span class="nv">\not</span><span class="o">=</span><span class="m">0</span><span class="s">$</span><span class="nb">}</span> <span class="k">\Comment</span><span class="nb">{</span>We have the answer if r is 0<span class="nb">}</span>
+    <span class="k">\State</span> <span class="s">$</span><span class="nb">a </span><span class="nv">\gets</span><span class="nb"> b</span><span class="s">$</span>
+    <span class="k">\State</span> <span class="s">$</span><span class="nb">b </span><span class="nv">\gets</span><span class="nb"> r</span><span class="s">$</span>
+    <span class="k">\State</span> <span class="s">$</span><span class="nb">r </span><span class="nv">\gets</span><span class="nb"> a </span><span class="nv">\bmod</span><span class="nb"> b</span><span class="s">$</span>
+    <span class="k">\EndWhile\label</span><span class="nb">{</span>euclidendwhile<span class="nb">}</span>
+    <span class="k">\State</span> <span class="k">\textbf</span><span class="nb">{</span>return<span class="nb">}</span> <span class="s">$</span><span class="nb">b</span><span class="s">$</span><span class="k">\Comment</span><span class="nb">{</span>The gcd is b<span class="nb">}</span>
+    <span class="k">\EndProcedure</span>
+  <span class="k">\end</span><span class="nb">{</span>algorithmic<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>algorithm<span class="nb">}</span>
+</pre></div>
+</div>
+</section>
+<section id="test-proper-export-of-stuff-to-rst-and-latex">
+<h2>Test proper export of stuff to rst and latex<a class="headerlink" href="#test-proper-export-of-stuff-to-rst-and-latex" title="Permalink to this headline">¶</a></h2>
+<p>Objective: devise notation that works for both latex and rst exports (and optionally in org also)</p>
+<ul class="simple">
+<li><p>☑ To which extent is org-ref appropriate? If modifications are possible, sufficient.</p></li>
+<li><p>☑ Fix styling of equations for rst to get numbering after equation</p></li>
+<li><p>Which modifications to sphinx (setup + plugins) and org-rst exporter or similar is needed?</p>
+<ul>
+<li><p>☑ redefine org-ref-ref-export for overriding <code class="docutils literal notranslate"><span class="pre">ref:label</span></code> to <code class="docutils literal notranslate"><span class="pre">:ref:label</span></code> in rst, org-ref-core.el</p></li>
+<li><p>☑ redefine org-ref-eqref-export for overriding <code class="docutils literal notranslate"><span class="pre">eqref:label</span></code> to <code class="docutils literal notranslate"><span class="pre">:eq:label</span></code> in rst, org-ref-core.el</p></li>
+<li><p>☑ Other modifications</p></li>
+</ul>
+</li>
+<li><p>☑ Export a bibliography directive manually in rst, see <a class="reference external" href="https://sphinxcontrib-bibtex.readthedocs.io/en/latest/index.html">this</a></p></li>
+<li><p>☑ override cref: so that it becomes <code class="docutils literal notranslate"><span class="pre">:numref:`fig:test`</span></code> when exported to rst</p></li>
+<li><p>☑ how to override eqref: so that it becomes <code class="docutils literal notranslate"><span class="pre">:eq:`eq:one`</span></code> in rst?</p></li>
+<li><p>☑ how to override cite: so that it becomes <code class="docutils literal notranslate"><span class="pre">:cite:`albert2016numerical`</span></code> in rst?</p></li>
+<li><p>☑ how to modify latex block to accept attributes for the math directive? (:label:) in rst?</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 26%" />
+<col style="width: 12%" />
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 6%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>What</p></th>
+<th class="head"><p>org (or org-ref)</p></th>
+<th class="head"><p>latex ok</p></th>
+<th class="head"><p>rst ok</p></th>
+<th class="head"><p>modifications</p></th>
+<th class="head"><p>exports ok</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Section</p></td>
+<td><p>Section <a class="reference internal" href="#sec-overview"><span class="std std-ref">Overview</span></a></p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>number in latex, title in rst, need prepend Section</p></td>
+</tr>
+<tr class="row-odd"><td><p>Figure</p></td>
+<td><p><a class="reference internal" href="#fig-component"><span class="std std-numref">Fig. 1</span></a></p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:numref:`fig:Component`</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>Modified a org-ref function, but with type before</p></td>
+</tr>
+<tr class="row-even"><td><p>Table</p></td>
+<td><p><a class="reference internal" href="#tab-test"><span class="std std-numref">Table 1</span></a></p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:numref:`tab:test`</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>Note that ref will be replaces with numref - may fail</p></td>
+</tr>
+<tr class="row-odd"><td><p>Equation ref</p></td>
+<td><p><a class="reference internal" href="#equation-eq-one">Eq. (5)</a></p></td>
+<td><p>yes <code class="docutils literal notranslate"><span class="pre">Eq.</span> <span class="pre">(number)</span></code></p></td>
+<td><p>yes</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:eq:`eq:one`</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>Modified org-ref function</p></td>
+</tr>
+<tr class="row-even"><td><p>cref/Cref</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>latex to math</p></td>
+<td><p>e.g. <code class="docutils literal notranslate"><span class="pre">\begin{equation}</span> <span class="pre">\end{equation}</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>math directive needs label</p></td>
+<td><p>no</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Basic cite</p></td>
+<td><p><span id="id1">[<a class="reference internal" href="#id6">1</a>]</span></p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:cite:`refs`</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>need sphinxcontrib.bibtex</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cite several</p></td>
+<td><p><span id="id2">[<a class="reference internal" href="#id6">1</a>, <a class="reference internal" href="#id7">3</a>]</span></p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">:cite:`ref1,ref2`</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>need sphinxcontrib.bibtex</p></td>
+</tr>
+<tr class="row-even"><td><p>Biblography</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bibliography:/home/joakim/bibs/bib.bib</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+<td><p>Use own directive when exporting to rst</p></td>
+</tr>
+<tr class="row-odd"><td><p>Figure</p></td>
+<td><p><a class="reference internal" href="#fig-component">fig:Component</a></p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>no</p></td>
+<td><p>Native org-mode, but not numbering</p></td>
+</tr>
+<tr class="row-even"><td><p>Table</p></td>
+<td><p><a class="reference internal" href="#tab-test">tab:test</a></p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>no</p></td>
+<td><p>Native org-mode, but not rst</p></td>
+</tr>
+<tr class="row-odd"><td><p>Complex cite</p></td>
+<td><p><span id="id3">[<a class="reference internal" href="#id8">2</a>]</span></p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>TBD</p></td>
+<td><p></p></td>
+<td><p>Unknown</p></td>
+</tr>
+</tbody>
+</table>
+<section id="figure">
+<h3>Figure<a class="headerlink" href="#figure" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="#fig-component"><span class="std std-numref">Fig. 1</span></a> shows something.</p>
+</section>
+<section id="table">
+<h3>Table<a class="headerlink" href="#table" title="Permalink to this headline">¶</a></h3>
+<p>See  <a class="reference internal" href="#tab-test"><span class="std std-numref">Table 1</span></a>.</p>
+<table class="docutils align-default" id="tab-test">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Example table.</span><a class="headerlink" href="#tab-test" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 29%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Phone</p></th>
+<th class="head"><p>Age</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p></p></td>
+<td><p></p></td>
+<td><p>What am I</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>0</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>c</p></td>
+<td><p>b</p></td>
+<td><p>d</p></td>
+</tr>
+<tr class="row-odd"><td><p>ba</p></td>
+<td><p>h</p></td>
+<td><p>n</p></td>
+</tr>
+<tr class="row-even"><td><p>a</p></td>
+<td><p>k</p></td>
+<td><p>c</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="equations">
+<h3>Equations<a class="headerlink" href="#equations" title="Permalink to this headline">¶</a></h3>
+<p>This is an inline equation: <span class="math notranslate nohighlight">\(e=\frac{m}{c}^3\)</span>.</p>
+<p>The equation below without label.</p>
+<div class="math notranslate nohighlight" id="equation-rst-test3-0">
+<span class="eqno">(4)<a class="headerlink" href="#equation-rst-test3-0" title="Permalink to this equation">¶</a></span>\[f = abc\label{eq:null}\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-one">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-one" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+e = mc^3
+\end{equation}\]</div>
+<p>MathJax supported latex notation <a class="reference external" href="http://docs.mathjax.org/en/latest/input/tex/macros/">tex/macros</a>. rst autowrapping of equations does not
+work always work, depending on the latex blocks used. If you do not want the rst to
+mathjax parsing to wrap your equations, add <code class="docutils literal notranslate"><span class="pre">#+ATTR_RST:</span> <span class="pre">:nowrap</span> <span class="pre">t</span></code>. The sacrifice is
+loosing visible numbering for that math block. Also, using <code class="docutils literal notranslate"><span class="pre">align</span></code> does not seem to
+produce numbering(?), so you need to add a tag, but this is not properly reflected in
+the reference in html. If you need properly numbered equation, you should simplify and
+sacrifice. How many</p>
+<div class="math notranslate nohighlight" id="equation-rst-test3-1">
+\begin{align}
+e &amp;= mc^2 \in \mathbb{Z}\tag{Not Einstein} \\
+m &amp;\approxeq \frac{\sqrt{c^2}}{e} \\
+0 &amp;= \unit{0}{\kelvin}
+\end{align}</div><div class="math notranslate nohighlight" id="equation-eq-two">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq-two" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{align}
+e &amp;= mc^2 \in \mathbb{Z}\\
+m &amp;\approxeq \frac{\sqrt{c^2}}{e}
+\end{align}\end{split}\]</div>
+<p>See <a class="reference internal" href="#equation-eq-one">Eq. (5)</a>, not <a class="reference internal" href="#equation-eq-two">Eq. (7)</a>.</p>
+</section>
+<section id="gnuplot-figure">
+<h3>Gnuplot figure<a class="headerlink" href="#gnuplot-figure" title="Permalink to this headline">¶</a></h3>
+<p>See  <a class="reference internal" href="#fig-simple"><span class="std std-numref">Fig. 2</span></a>, which was compiled with gnuplot.</p>
+<figure class="align-center" id="id10">
+<span id="fig-simple"></span><img alt="static/agnu.svg" src="static/agnu.svg" /><figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Gnuplot test.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="code-execution">
+<h3>Code execution<a class="headerlink" href="#code-execution" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference internal" href="#code-test"><span class="std std-numref">Listing 1</span></a>.</p>
+<div class="literal-block-wrapper docutils container" id="code-test">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">(Casadi with gnuplot source code.)</span><a class="headerlink" href="#code-test" title="Permalink to this code">¶</a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">0</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+<span class="linenos">1</span>
+<span class="linenos">2</span>  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello world&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">3</span>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos">4</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">Hello</span> <span class="n">world</span>
+</pre></div>
+</div>
+</section>
+<section id="citations">
+<h3>Citations<a class="headerlink" href="#citations" title="Permalink to this headline">¶</a></h3>
+<p>See <span id="id4">[<a class="reference internal" href="#id6">1</a>]</span>.</p>
+<blockquote>
+<div><p id="id5"><dl class="citation">
+<dt class="label" id="id6"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id4">3</a>)</span></dt>
+<dd><p>Anders Albert, Lars Imsland, and Joakim Haugen. Numerical optimal control mixing collocation with single shooting: a case study. <em>IFAC-PapersOnLine</em>, 49(7):290–295, 2016.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p>Joakim Haugen, Eduardo Grimaldo, and Svein H Gjøsund. A winch reference control system for semi-pelagic triple trawling: with full-scale sea trials. In <em>ASME 2017 36th International Conference on Ocean, Offshore and Arctic Engineering</em>, V07BT06A025–V07BT06A025. American Society of Mechanical Engineers, 2017.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id2">3</a></span></dt>
+<dd><p>Joakim Haugen and Lars Imsland. Monitoring moving objects using aerial mobile sensors. <em>IEEE Transactions on Control Systems Technology</em>, 24(2):475–486, 2015.</p>
+</dd>
+</dl>
+</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="todo.html" class="btn btn-neutral float-right" title="[7/10] Setup of documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="orgtest2.html" class="btn btn-neutral float-left" title="Let us do it" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Unspecified.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. <jinja2.runtime.BlockReference object at 0x7f6b387eddf0>
+<br /><br />
+<table>
+  <tr>
+  <td width="32" style="vertical-align:middle">
+    <img alt="Apache License, Version 2.0" style="border-width:0" width="32" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Apache_Feather_Logo.svg" />
+  </td>
+  <td>
+    This work is licensed under the Apache License, Version 2.0 (the "License").
+    You may obtain a copy of the License at
+    <a rel="license" href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0.</a>
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+    specific language governing permissions and limitations under the License.
+  </td>
+  </tr>
+</table>
+
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+
+[7/10] Setup of documentation
+-----------------------------
+
+- ☑ define documentation targets (html, latex, man)
+  With exhale only html is supported
+
+- [3/3] test doc2dash to export to docset target
+
+  - ☑ Add target that uses doc2dash
+
+  - ☑ It works, improve with `https://kapeli.com/docsets#improveDocset <https://kapeli.com/docsets#improveDocset>`_
+    But for some reason the icon.png is not extracted properly
+
+  - ☑ Compress docset and add xml template so that it can be served by a web service
+
+- ☑ add pygments syntax highlighting
+
+- ☑ add branding logo doxygen/rtd
+
+- ☑ change color on top left
+
+- ☑ use ``exhale`` to auto generate API doc, custom command
+
+- ☑ add skeleton md/rst org-moded doc tree for non-API documentation
+
+  - `use this as inspiration <https://xtensor.readthedocs.io/en/latest/installation.html>`_
+
+- [6/7] add optional build step that compiles org files to rst/md
+
+  - ☑ ``emacs index.org --batch -l (load org and ox-rst) -f org-export-to-rst``
+
+  - ☑ make sure exported to an output directory and not in the source tree, but org files
+
+  - ☑ references relative to each other. Need to test this
+
+  - ☑ ``broken-links`` or ``org-export-with-broken-links``
+
+  - ☑ `useful? <https://stackoverflow.com/questions/22072773/batch-export-of-org-mode-files-from-the-command-line>`_
+
+  - ☑ `include files in org <https://orgmode.org/manual/Include-Files.html>`_
+
+  - ☐ See if you can fix some quirks on cross-referencing documents
+
+- ☒ Plugins
+
+  - ☐ ``sphinx-versioning`` to support multiple doc versions, upstream branches..
+
+  - ☑ ``sphinx.ext.mathjax`` example
+
+  - ☑ ``recommonmark``, `this <https://recommonmark.readthedocs.io/en/latest/index.html>`_ with example
+
+  - [4/4] test plantuml in code (doxygen), org files and its export to sphinx/xml, ``sphinxcontrib.plantuml``?
+
+    - ☑ Currently not supported in Breathe `see this issue <https://github.com/michaeljones/breathe/issues/435>`_, found workaround with rst embedding
+
+    - ☑ ``sphinxcontrib.plantuml`` to support plantuml in rst?
+
+    - ☑ Export output from org-mode is possible
+
+    - ☑ Plantuml in markdown
+
+- ☐ Conditionally include stuff with directive ``.. ifconfig::``, see `sphinx.ext.ifconfig <https://www.sphinx-doc.org/en/master/usage/extensions/ifconfig.html>`_
+
+- ☑ Link between projects, use `intersphinx <https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html>`_, see `exhale intersphinx <https://my-favorite-documentation-test.readthedocs.io/en/latest/using_intersphinx.html#linking-to-other-sites-using-intersphinx>`_
+
+.. todo::
+
+    This needs to be done
+
+- References
+
+  - `doc2dash <https://gist.github.com/pbojinov/00a8159a83ac305af3c0>`_
+
+  - `read the docs config <https://sphinx-rtd-theme.readthedocs.io/en/latest/configuring.html>`_
+
+  - `org to restructuredtext <https://github.com/msnoigrs/ox-rst>`_
+
+  .. conclusion:: Other doc test
+      :name: ungiven2
+
+      See how enumerable directives across docs work.
+
+Notes
+~~~~~
+
+It is starting to take shape, this section is found in readme

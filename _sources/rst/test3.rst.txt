@@ -1,0 +1,241 @@
+
+
+
+Quick view of org-mode to html
+------------------------------
+
+.. _sec:overview:
+
+Overview
+~~~~~~~~
+
+Diagram in :numref:`fig:Component` below.
+
+
+.. _fig:Component:
+
+.. figure:: ../static/container.svg
+
+    Component diagram for Mimir.
+
+Add own directive
+~~~~~~~~~~~~~~~~~
+
+.. conjecture:: Done it: \(\mathbb{R}\)
+    :name: helloyou2
+
+    You are hello too
+
+
+:numref:`helloyou2`. Cool :numref:`helloyou2`.
+
+.. conclusion:: DoIt2
+    :name: ungiven1
+
+    You are unforgiven too. :math:`\pi = \Z`. But what :math:`\RR`.
+
+:ref:`ungiven1` or :numref:`ungiven1`. And :numref:`ungiven2`.
+
+
+.. warning::
+
+    You cannot reference built-in admonitions?
+
+- ☐ Figure out how to add support for pseudocode.js or algpseudocode
+
+- ☐ Maybe an alternative is to render to an image and include that..
+
+.. code-block:: tex
+    :name: euclid
+
+    \begin{algorithm}
+      \caption{Euclid’s algorithm}
+      \label{euclid}
+      \begin{algorithmic}[1] % The number tells where the line numbering should start
+        \Procedure{Euclid}{$a,b$} \Comment{The g.c.d. of a and b}
+        \State $r\gets a \bmod b$
+        \While{$r\not=0$} \Comment{We have the answer if r is 0}
+        \State $a \gets b$
+        \State $b \gets r$
+        \State $r \gets a \bmod b$
+        \EndWhile\label{euclidendwhile}
+        \State \textbf{return} $b$\Comment{The gcd is b}
+        \EndProcedure
+      \end{algorithmic}
+    \end{algorithm}
+
+Test proper export of stuff to rst and latex
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Objective: devise notation that works for both latex and rst exports (and optionally in org also)
+
+- ☑ To which extent is org-ref appropriate? If modifications are possible, sufficient.
+
+- ☑ Fix styling of equations for rst to get numbering after equation
+
+- Which modifications to sphinx (setup + plugins) and org-rst exporter or similar is needed?
+
+  - ☑ redefine org-ref-ref-export for overriding ``ref:label`` to ``:ref:label`` in rst, org-ref-core.el
+
+  - ☑ redefine org-ref-eqref-export for overriding ``eqref:label`` to ``:eq:label`` in rst, org-ref-core.el
+
+  - ☑ Other modifications
+
+- ☑ Export a bibliography directive manually in rst, see `this <https://sphinxcontrib-bibtex.readthedocs.io/en/latest/index.html>`_
+
+- ☑ override cref: so that it becomes ``:numref:`fig:test``` when exported to rst
+
+- ☑ how to override eqref: so that it becomes ``:eq:`eq:one``` in rst?
+
+- ☑ how to override cite: so that it becomes ``:cite:`albert2016numerical``` in rst?
+
+- ☑ how to modify latex block to accept attributes for the math directive? (:label:) in rst?
+
+.. table::
+
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | What          | org (or org-ref)                                 | latex ok             | rst ok | modifications               | exports ok | Comment                                               |
+    +===============+==================================================+======================+========+=============================+============+=======================================================+
+    | Section       | Section :ref:`sec:overview`                      | yes                  | yes    | no                          | yes        | number in latex, title in rst, need prepend Section   |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | Figure        | :numref:`fig:Component`                          | yes                  | yes    | ``:numref:`fig:Component``` | yes        | Modified a org-ref function, but with type before     |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | Table         | :numref:`tab:test`                               | yes                  | yes    | ``:numref:`tab:test```      | yes        | Note that ref will be replaces with numref - may fail |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | Equation ref  | :eq:`eq:one`                                     | yes ``Eq. (number)`` | yes    | ``:eq:`eq:one```            | yes        | Modified org-ref function                             |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | cref/Cref     | \                                                | \                    | \      | \                           | \          | \                                                     |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | latex to math | e.g. ``\begin{equation} \end{equation}``         | yes                  | no     | math directive needs label  | no         | \                                                     |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | Basic cite    | :cite:`albert2016numerical`                      | yes                  | no     | ``:cite:`refs```            | yes        | need sphinxcontrib.bibtex                             |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | Cite several  | :cite:`albert2016numerical,haugen2015monitoring` | yes                  | no     | ``:cite:`ref1,ref2```       | yes        | need sphinxcontrib.bibtex                             |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | Biblography   | ``bibliography:/home/joakim/bibs/bib.bib``       | yes                  | no     | no                          | no         | Use own directive when exporting to rst               |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | Figure        | `fig:Component`_                                 | yes                  | no     | -                           | no         | Native org-mode, but not numbering                    |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | Table         | `tab:test`_                                      | yes                  | no     | -                           | no         | Native org-mode, but not rst                          |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+    | Complex cite  | :cite:`haugen2017winch`                          | yes                  | no     | TBD                         | \          | Unknown                                               |
+    +---------------+--------------------------------------------------+----------------------+--------+-----------------------------+------------+-------------------------------------------------------+
+
+Figure
+^^^^^^
+
+:numref:`fig:Component` shows something.
+
+Table
+^^^^^
+
+See  :numref:`tab:test`.
+
+.. table:: Example table.
+    :name: tab:test
+
+    +------+-------+-----------+
+    | Name | Phone | Age       |
+    +======+=======+===========+
+    | \    | \     | What am I |
+    +------+-------+-----------+
+    | \    | 0     | \         |
+    +------+-------+-----------+
+    | c    | b     | d         |
+    +------+-------+-----------+
+    | ba   | h     | n         |
+    +------+-------+-----------+
+    | a    | k     | c         |
+    +------+-------+-----------+
+
+Equations
+^^^^^^^^^
+
+This is an inline equation: :math:`e=\frac{m}{c}^3`.
+
+The equation below without label.
+
+
+
+.. math::
+
+    f = abc\label{eq:null}
+
+
+.. math::
+    :label: eq:one
+
+    \begin{equation}
+    e = mc^3
+    \end{equation}
+
+MathJax supported latex notation `tex/macros <http://docs.mathjax.org/en/latest/input/tex/macros/>`_. rst autowrapping of equations does not
+work always work, depending on the latex blocks used. If you do not want the rst to
+mathjax parsing to wrap your equations, add ``#+ATTR_RST: :nowrap t``. The sacrifice is
+loosing visible numbering for that math block. Also, using ``align`` does not seem to
+produce numbering(?), so you need to add a tag, but this is not properly reflected in
+the reference in html. If you need properly numbered equation, you should simplify and
+sacrifice. How many
+
+.. math::
+    :nowrap:
+
+    \begin{align}
+    e &= mc^2 \in \mathbb{Z}\tag{Not Einstein} \\
+    m &\approxeq \frac{\sqrt{c^2}}{e} \\
+    0 &= \unit{0}{\kelvin}
+    \end{align}
+
+.. math::
+    :label: eq:two
+
+    \begin{align}
+    e &= mc^2 \in \mathbb{Z}\\
+    m &\approxeq \frac{\sqrt{c^2}}{e}
+    \end{align}
+
+
+See :eq:`eq:one`, not :eq:`eq:two`.
+
+Gnuplot figure
+^^^^^^^^^^^^^^
+
+See  :numref:`fig:simple`, which was compiled with gnuplot.
+
+.. _fig:simple:
+
+.. figure:: ../static/agnu.svg
+    :align: center
+
+
+    Gnuplot test.
+
+Code execution
+^^^^^^^^^^^^^^
+
+See :numref:`code:test`.
+
+.. code-block:: cpp
+    :lineno-start: 0
+    :name: code:test
+    :caption: (Casadi with gnuplot source code.)
+
+    int main(){
+
+      std::cout << "Hello world" << std::endl;
+      return 0;
+    }
+
+::
+
+    Hello world
+
+Citations
+^^^^^^^^^
+
+See :cite:`albert2016numerical`.
+
+
+   .. bibliography:: ../static/bib.bib
+     :style: plain
+     :cited:

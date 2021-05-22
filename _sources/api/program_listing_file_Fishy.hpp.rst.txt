@@ -1,0 +1,36 @@
+
+.. _program_listing_file_Fishy.hpp:
+
+Program Listing for File Fishy.hpp
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fishy.hpp>` (``Fishy.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   namespace ocean {
+   
+     struct creature
+     {
+   
+     };
+   
+   
+     class fish : protected creature
+     {
+     public:
+       void fish_me();
+   
+       fish() = default;
+     };
+   
+     enum class fish_type : int
+     {
+       mackerel=-1, salmon=0, halibut=1
+     };
+   
+   }
