@@ -28,10 +28,10 @@ jobs:
       - name: Build doc
         run: |
           mkdir build
-          pushd build
+          cd build
           cmake ..
           cmake --build . --target doc
-          popd
+          cd ..
           mkdir public
           mv build/docs/sphinx/html/ ./public/
           apt-get update
