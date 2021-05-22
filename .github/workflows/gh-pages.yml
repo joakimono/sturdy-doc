@@ -20,7 +20,7 @@ jobs:
       - name: Setup build deps
         run: |
           apt-get update
-          apt-get install -y cmake pip doxygen emacs-nox graphviz plantuml wget pandoc
+          apt-get install -y git cmake pip doxygen emacs-nox graphviz plantuml wget pandoc
           wget https://sourceforge.net/projects/plantuml/files/plantuml.jar
           mv plantuml.jar /usr/share/plantuml/
           emacs -Q --batch -l docs/emacs-install-pkgs.el
